@@ -1,0 +1,27 @@
+# Ignore build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code settings
+.vscode/
+
+# ASP.NET secrets
+secrets.json
+
+# Dotnet tools
+*.pdb
+*.cache
+*.db
+
+# Logs
+*.log
+
+# Publish output
+publish/
+.vs/
