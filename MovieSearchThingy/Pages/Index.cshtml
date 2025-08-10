@@ -1,0 +1,72 @@
+﻿@page
+@model MovieSearchThingy.Pages.IndexModel
+@{
+    ViewData["Title"] = "Movie Search";
+}
+
+<h2>Movie Search</h2>
+<form method="post" asp-page-handler="Search">
+    <div class="input-group mb-3">
+        <input asp-for="SearchQuery" class="form-control" placeholder="Enter movie title..." />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+@if (Model.LastSearches?.Count > 0)
+{
+    <div>
+        <strong>Last 5 Searches:</strong>
+        <ul>
+            @foreach (var q in Model.LastSearches)
+            {
+                <li>
+                    <form method="post" asp-page-handler="Search" style="display:inline;">
+                        <input type="hidden" name="SearchQuery" value="@q" />
+                        <button type="submit" class="btn btn-link p-0">@q</button>
+                    </form>
+                </li>
+            }
+        </ul>
+    </div>
+}
+
+@if (Model.SearchResults?.Count > 0)
+{
+    <h3>Results</h3>
+    <ul class="list-group">
+        @foreach (var movie in Model.SearchResults)
+        {
+            <li class="list-group-item d-flex align-items-center">
+                <img src="@movie.Poster" alt="Poster" style="height:60px;width:auto;margin-right:10px;" onerror="this.style.display='none';" />
+                <div>
+                    <strong>@movie.Title</strong> (@movie.Year)
+                    <form method="post" asp-page-handler="Select" style="display:inline;">
+                        <input type="hidden" name="SelectedImdbId" value="@movie.ImdbID" />
+                        <button type="submit" class="btn btn-sm btn-info ms-2">Details</button>
+                    </form>
+                </div>
+            </li>
+        }
+    </ul>
+}
+
+@if (Model.SelectedMovie != null)
+{
+    <div class="card mt-4">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="@Model.SelectedMovie.Poster" class="img-fluid rounded-start" alt="Poster" onerror="this.style.display='none';">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.SelectedMovie.Title (@Model.SelectedMovie.Year)</h5>
+                    <p class="card-text"><strong>IMDB Rating:</strong> @Model.SelectedMovie.ImdbRating</p>
+                    <p class="card-text"><strong>Plot:</strong> @Model.SelectedMovie.Plot</p>
+                    <p class="card-text"><strong>Genre:</strong> @Model.SelectedMovie.Genre</p>
+                    <p class="card-text"><strong>Director:</strong> @Model.SelectedMovie.Director</p>
+                    <p class="card-text"><strong>Actors:</strong> @Model.SelectedMovie.Actors</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
