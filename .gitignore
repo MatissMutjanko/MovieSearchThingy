@@ -1,6 +1,3 @@
-# Ignore build results
-bin/
-obj/
 
 # User-specific files
 *.user
@@ -29,3 +26,7 @@ copilotIndices/
 copilot-chat/
 FileContentIndex/
 v17/
+MovieThingy.Tests/obj
+MovieThingy.Tests/bin
+MovieThingy/bin
+MovieThingy/obj
