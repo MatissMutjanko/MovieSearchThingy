@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MovieSearchThingy.Models;
-using System.Net.Http;
+using MovieSearchThingy.Pages.Models;
 using System.Text.Json;
 
 namespace MovieSearchThingy.Pages
@@ -10,7 +10,7 @@ namespace MovieSearchThingy.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private readonly IHttpClientFactory _httpClientFactory;
-        private const string ApiKey = "f518d0fe";
+        private const string ApiKey = "f518d0fe"; // For demo purposes I will leave it here.
         private const string OmdbApiUrl = "http://www.omdbapi.com/";
 
         [BindProperty]
