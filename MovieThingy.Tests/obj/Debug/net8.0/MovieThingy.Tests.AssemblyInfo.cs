@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MovieThingy.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a09a88ae4889b5d9410fc4a3e7f45360b0dd5c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1dac9a747a7a738bc6809469e9be64278dd66e4")]
 [assembly: System.Reflection.AssemblyProductAttribute("MovieThingy.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MovieThingy.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
